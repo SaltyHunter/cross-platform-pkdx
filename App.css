@@ -1,0 +1,65 @@
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+    display: block;
+    color: rgb(91, 223, 247);
+    text-align: center;
+    align-items: 10;
+    padding: 15px 15px;
+    text-decoration: none;
+
+  }
+  
+  li:hover:not(.active) {
+    background-color: rgb(91, 223, 247);
+    color: black;
+  }
+  
+  .active {
+    background-color: black;
+  }
+
+h1 {
+    text-align: center;
+  }
+
+p {
+    text-align: center;
+    color: rgb(97, 0, 0);
+
+}
+
+.rank{
+  text-align: center;
+  align-items: 10;
+  padding: 15px 15px;
+}
+
+.name{
+  text-align: center;
+  align-items: 10;
+  padding: 15px 15px;
+  color: black;
+}
+
+.prix{
+  text-align: center;
+  align-items: 10;
+  padding: 15px 15px;
+  color: green;
+}
+
+.change{
+  text-align: center;
+  align-items: 10;
+  padding: 15px 15px;
+  color: red;
+}
