@@ -8,10 +8,10 @@ export function Nav() {
       <nav>
         <ul className="nav-links">
         <Link to ="/">
-            <li>HOME</li>
-        </Link>
-        <Link  to ="/Pokemon">
             <li>POKEDEX</li>
+        </Link>
+        <Link  to ="/Entraineur">
+            <li>ENTRAINEUR</li>
         </Link>
         
         </ul>

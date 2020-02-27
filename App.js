@@ -12,7 +12,6 @@ export default function App() {
       <div className="App"> 
       <Switch>
         <Route path="/" exact component={home}/>
-        <Route path="/Pokemon" exact component={Pokedex}/>
         <Route path="/Pokemon/:name" component={Pokemons}/>
         </Switch>
       </div>
@@ -20,16 +19,6 @@ export default function App() {
   );
 }
 const home = () => (
-  <header>
-    <h1>HOME PAGE</h1>
-  </header>
+  <Pokedex/>
 )
-/*
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});*/
+
