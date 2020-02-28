@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Image } from 'react'
 import { Link } from 'react-router-dom'
 import './App.css';
-import logo from './assets/pokemon/${pokemon.index}.png';
 
 
 export default function Pokedex() {
@@ -27,22 +26,23 @@ function addIndex(pokedex){
     let i = 1
     pokedex = pokedex.map(function(element) {
         element.index = i
+        element.image = require(`./assets/pokemon/${element.index}.png`)
         i = i+1
         return element
     })
     console.log(pokedex) 
 }
-  return (
+
+return (
     <div>
         {addIndex(pokedex)}
         <h1>Pokedex</h1>
         {pokedex.map(pokemon =>(
             <p key={pokemon.name}>
-                <li><Link to = {`/Pokemon/${pokemon.name}`}><p><img src={logo}/></p>{pokemon.name}</Link></li>
+                <li><Link to = {`/Pokemon/${pokemon.name}`}><img src={pokemon.image}/><p>{pokemon.name}</p></Link></li>
             </p>
         ))} 
     </div>
   );
 }
 
-//<li><Link to = {`/Pokemon/${pokemon.name}`}><p><img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.index}.png`}/></p>{pokemon.name}</Link></li>
