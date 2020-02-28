@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import './App.css';
+//import './App.css';
 
-export function Nav() {
+export default function Nav() {
 
     return (
       <nav>
@@ -13,10 +13,7 @@ export function Nav() {
         <Link  to ="/Entraineur">
             <li>ENTRAINEUR</li>
         </Link>
-        
         </ul>
       </nav>
     ) 
 }
-
-export default Nav;
