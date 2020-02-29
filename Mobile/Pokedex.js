@@ -43,7 +43,7 @@ function addIndex(pokedex){
         {addIndex(pokedex)}
         <Logout/>
         {pokedex.map(pokemon =>(
-            <View style={{textAlign:"vertical"}}>
+            <View>
                 <Avatar
                     size="large"
                     source={{ uri: pokemon.image }} 
@@ -51,8 +51,7 @@ function addIndex(pokedex){
                     onPress={() => navigation.navigate('Pokemons', {
                         pokemonId:pokemon.index,
                         pokemonName: pokemon.name,
-                        pokemonDetail: pokemon,
-                        pokemonWeight: pokemon.results
+                        pokemonDetails: pokemon,
                     })}
                 />
                 <Text style={{ textTransform:"uppercase"}}>{pokemon.name}</Text>
