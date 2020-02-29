@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, StyleSheet} from "react-native";
+import {View, Text, StyleSheet, StatusBar, Image} from "react-native";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import * as firebase from "firebase";
 //import { ThemeColors } from "react-navigation";
@@ -27,9 +27,8 @@ export default class RegisterScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.greeting}>
-                    {'Hello!\nSign up to get started.'}
-                </Text>
+                <StatusBar barStyle="light-content"></StatusBar>
+                <Image source = {require("../assets/pokeball.png")} style={{ marginLeft:100, marginTop:10}}></Image>
 
                 <View style={styles.errorMessage}>
         {this.state.errorMessage && <Text style={styles.error}>{this.state.errorMessage}</Text>}
@@ -37,7 +36,7 @@ export default class RegisterScreen extends React.Component {
 
                 <View style={styles.form}>
                     <View>
-                        <Text style={styles.inputTitle}>Full Name</Text>
+                        <Text style={styles.inputTitle}>nom</Text>
                         <TextInput
                          style={styles.input}
                          autoCapitalize="none" 
@@ -47,7 +46,7 @@ export default class RegisterScreen extends React.Component {
                     </View>
 
                     <View style={{marginTop: 32}}>
-                        <Text style={styles.inputTitle}>Email Address</Text>
+                        <Text style={styles.inputTitle}>adresse email</Text>
                         <TextInput
                          style={styles.input}
                          autoCapitalize="none" 
@@ -57,7 +56,7 @@ export default class RegisterScreen extends React.Component {
                     </View>
 
                     <View style = {{marginTop: 32}}>
-                        <Text style={styles.inputTitle}>Password</Text>
+                        <Text style={styles.inputTitle}>mot de passe</Text>
                         <TextInput 
                          style={styles.input} 
                          secureTextEntry 
@@ -69,12 +68,13 @@ export default class RegisterScreen extends React.Component {
                 </View>
 
                 <TouchableOpacity style={styles.button} onPress={this.handleSignUp}>
-                    <Text style={{color: "#FFF", fontWeight:"500"}}>Sign up</Text>
+                    <Text style={{color: "#FFF", fontWeight:"500"}}>Inscription</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={{alignSelf:"center", marginTop:32}}>
-                    <Text>
-                        You are not registered yet? <Text style={{fontWeight: "500", color: "#E9446A"}}>Login</Text>
+                <TouchableOpacity style={{alignSelf:"center", marginTop:32}}
+                    onPress={() => this.props.navigation.navigate("Login")}>
+                    <Text style={{fontWeight: "500", color: "white"}}>
+                        Vous etes déjà inscrit ? <Text style={{fontWeight: "500", color: "red"}}>Connectez-vous</Text>
                     </Text>
                 </TouchableOpacity>
             </View>
@@ -84,7 +84,8 @@ export default class RegisterScreen extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex : 1
+        flex : 1,
+        backgroundColor: "black"
     },
     greeting: {
         marginTop: 32,
@@ -118,11 +119,11 @@ const styles = StyleSheet.create({
         borderBottomWidth: StyleSheet.hairlineWidth,
         height: 40,
         fontSize: 15,
-        color: "#161F3D"
+        color: "white"
     },
     button: {
         marginHorizontal: 30,
-        backgroundColor: "#E9446A",
+        backgroundColor: "red",
         borderRadius: 4,
         height: 52,
         alignItems: "center",

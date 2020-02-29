@@ -10,7 +10,7 @@ export default function Pokedex({ navigation }) {
     const [pokedex,setPokedex]=useState([]);
     const fetchPokedex = async () => {
         const data = await fetch(
-            'https://pokeapi.co/api/v2/pokemon?limit=10'
+            'https://pokeapi.co/api/v2/pokemon?limit=100'
         );
         const pokedex = await data.json();
         setPokedex(pokedex.results);
@@ -38,11 +38,11 @@ function addIndex(pokedex){
 }
   return (
       
-        <ScrollView>
+        <ScrollView style={{backgroundColor:"#bdbcbc"}}>
         {addIndex(pokedex)}
         <Logout/>
         {pokedex.map(pokemon =>(
-            <View>
+            <View style={{ flex:1, alignItems: 'center', justifyContent: 'center'}}>
                 <Avatar
                     size="large"
                     source={{ uri: pokemon.image }} 
@@ -59,11 +59,5 @@ function addIndex(pokedex){
         </ScrollView>
   );
 }
-/*
-const styles = StyleSheet.create({
-    container: {
-        flex : 1,
-        backgroundColor:"grey",
-        colors:"red"
-    }
-});*/
+
+// style={{ flex:1, alignItems: 'center', justifyContent: 'center', backgroundColor:"#bdbcbc"}}

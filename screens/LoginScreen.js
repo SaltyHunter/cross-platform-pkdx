@@ -25,10 +25,7 @@ export default class LoginScreen extends React.Component {
         return (
             <View style={styles.container}>
                 <StatusBar barStyle="light-content"></StatusBar>
-                <Image source = {require("../assets/pokeball.png")} style={{ height:"50%"}}></Image>
-                <Text style={styles.greeting}>
-                    {'Pokedex'}
-                </Text>
+                <Image source = {require("../assets/pokeball.png")} style={{ marginLeft:100, marginTop:100}}></Image>
 
                 <View style={styles.errorMessage}>
         {this.state.errorMessage && <Text style={styles.error}>{this.state.errorMessage}</Text>}
@@ -36,7 +33,7 @@ export default class LoginScreen extends React.Component {
 
                 <View style={styles.form}>
                     <View>
-                        <Text style={styles.inputTitle}>Email Address</Text>
+                        <Text style={styles.inputTitle}>adresse email</Text>
                         <TextInput
                          style={styles.input}
                          autoCapitalize="none" 
@@ -46,7 +43,7 @@ export default class LoginScreen extends React.Component {
                     </View>
 
                     <View style = {{marginTop: 32}}>
-                        <Text style={styles.inputTitle}>Password</Text>
+                        <Text style={styles.inputTitle}>mot de passe</Text>
                         <TextInput 
                          style={styles.input} 
                          secureTextEntry 
@@ -58,14 +55,14 @@ export default class LoginScreen extends React.Component {
                 </View>
 
                 <TouchableOpacity style={styles.button} onPress={this.handleLogin}>
-                    <Text style={{color: "#FFF", fontWeight:"500"}}>Sign in</Text>
+                    <Text style={{color: "#FFF", fontWeight:"500"}}>Connexion</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={{alignSelf:"center", marginTop:32}}
                     onPress={() => this.props.navigation.navigate("Register")}
                 >
-                    <Text style= {{color: "#414959", fontSize: 13}}>
-                        You are not registered yet? <Text style={{fontWeight: "500", color: "#E9446A"}}>Sign up</Text>
+                    <Text style= {{color: "white", fontSize: 13}}>
+                        Vous n'est pas inscrit ? <Text style={{fontWeight: "500", color: "red"}}>Inscrivez-vous</Text>
                     </Text>
                 </TouchableOpacity>
             </View>
