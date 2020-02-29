@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Text, View, ScrollView } from 'react-native';
-import { Avatar } from 'react-native-elements';
+import { Avatar, colors } from 'react-native-elements';
 import Logout from '../Signout'
 
 export default function Pokedex({ navigation }) {
@@ -13,7 +13,6 @@ export default function Pokedex({ navigation }) {
             'https://pokeapi.co/api/v2/pokemon?limit=10'
         );
         const pokedex = await data.json();
-        console.log(pokedex.results);
         setPokedex(pokedex.results);
 };
 function getDetailPokemon(linkPokemon) {
@@ -60,3 +59,11 @@ function addIndex(pokedex){
         </ScrollView>
   );
 }
+/*
+const styles = StyleSheet.create({
+    container: {
+        flex : 1,
+        backgroundColor:"grey",
+        colors:"red"
+    }
+});*/

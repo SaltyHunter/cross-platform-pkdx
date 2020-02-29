@@ -9,6 +9,8 @@ export default function Pokemon ( route ) {
     const {pokemonId} = route.navigation.state.params;
     const {pokemonName} = route.navigation.state.params;
     const {pokemonDetails} = route.navigation.state.params;
+    const type2 = JSON.stringify(pokemonDetails.detail['_55'].types[1]) !== undefined ? JSON.stringify(pokemonDetails.detail['_55'].types[1].type.name) : 'nothing';
+
 
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -22,8 +24,8 @@ export default function Pokemon ( route ) {
       <Text>Height: {JSON.stringify(pokemonDetails.detail['_55'].height)}</Text>
       <Text>Weight: {JSON.stringify(pokemonDetails.detail['_55'].weight)}</Text>       
       <Text>Base Experience: {JSON.stringify(pokemonDetails.detail['_55']['base_experience'])}</Text>
-      <Text>Type 1: {JSON.stringify(pokemonDetails.detail['_55'].types[1].type.name)}</Text>       
-      <Text>Type 2: {JSON.stringify(pokemonDetails.detail['_55'].types[0].type.name)}</Text>
+      <Text>Type 1: {JSON.stringify(pokemonDetails.detail['_55'].types[0].type.name)}</Text>       
+      <Text>Type 2: {type2}</Text>
       
       <ScrollView>
           <Text>STATS:</Text>

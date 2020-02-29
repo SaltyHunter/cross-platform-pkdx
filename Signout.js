@@ -1,7 +1,6 @@
 import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity} from "react-native";
 import * as firebase from "firebase";
-import logo from './assets/logout.png'
 import { Avatar } from 'react-native-elements';
 
 export default class Logout extends React.Component {
@@ -25,7 +24,7 @@ export default class Logout extends React.Component {
             <View style={styles.container}>
                 <TouchableOpacity style={{marginTop: 1, marginLeft:"90%"}} onPress={this.signOutUser}>
                     <Avatar
-                    source={{ uri: `${logo}` }}
+                    source={require('./assets/logout.png')}
                     />                
                 </TouchableOpacity>
             </View>

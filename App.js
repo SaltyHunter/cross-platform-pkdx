@@ -5,19 +5,17 @@ import {createStackNavigator} from 'react-navigation-stack'
 import LoadingScreen from './screens/LoadingScreen'
 import LoginScreen from './screens/LoginScreen.js'
 import RegisterScreen from './screens/RegisterScreen'
-
 import * as firebase from 'firebase'
-import Logout from './Signout';
 
 var firebaseConfig = {
-  apiKey: "AIzaSyDWU0llU8irjBkXlTitdGmko1JemAWbyc4",
-  authDomain: "pokedex-831af.firebaseapp.com",
-  databaseURL: "https://pokedex-831af.firebaseio.com",
-  projectId: "pokedex-831af",
-  storageBucket: "pokedex-831af.appspot.com",
-  messagingSenderId: "856793459134",
-  appId: "1:856793459134:web:0847a4a4dcb8d717a231ef",
-  measurementId: "G-KEFE9N7X3F"
+  apiKey: "AIzaSyCtwhyNqtlx9voQBcW46wtl21vjDOqIadE",
+  authDomain: "pokedex-96bc1.firebaseapp.com",
+  databaseURL: "https://pokedex-96bc1.firebaseio.com",
+  projectId: "pokedex-96bc1",
+  storageBucket: "pokedex-96bc1.appspot.com",
+  messagingSenderId: "324731372480",
+  appId: "1:324731372480:web:9d005e4a2f946cdc087e25",
+  measurementId: "G-73PK9J1LF2"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -45,4 +43,3 @@ export default createAppContainer(
     }
   )
 );
-

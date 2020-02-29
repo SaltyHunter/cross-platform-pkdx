@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, StyleSheet} from "react-native";
+import {View, Text, StyleSheet, StatusBar, Image} from "react-native";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import * as firebase from "firebase";
 //import { ThemeColors } from "react-navigation";
@@ -24,8 +24,10 @@ export default class LoginScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
+                <StatusBar barStyle="light-content"></StatusBar>
+                <Image source = {require("../assets/pokeball.png")} style={{ height:"50%"}}></Image>
                 <Text style={styles.greeting}>
-                    {'SALTY POKEDEX'}
+                    {'Pokedex'}
                 </Text>
 
                 <View style={styles.errorMessage}>
@@ -73,7 +75,8 @@ export default class LoginScreen extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex : 1
+        flex : 1,
+        backgroundColor:"black"
     },
     greeting: {
         marginTop: 32,
@@ -88,7 +91,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 30
     },
     error: {
-        color: "#E9446A",
+        color: "red",
         fontSize: 13,
         fontWeight: "600",
         textAlign: "center"
@@ -107,11 +110,11 @@ const styles = StyleSheet.create({
         borderBottomWidth: StyleSheet.hairlineWidth,
         height: 40,
         fontSize: 15,
-        color: "#161F3D"
+        color: "white"
     },
     button: {
         marginHorizontal: 30,
-        backgroundColor: "#E9446A",
+        backgroundColor: "red",
         borderRadius: 4,
         height: 52,
         alignItems: "center",
