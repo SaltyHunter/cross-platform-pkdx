@@ -7,6 +7,7 @@ import LoginScreen from './screens/LoginScreen.js'
 import RegisterScreen from './screens/RegisterScreen'
 
 import * as firebase from 'firebase'
+import Logout from './Signout';
 
 var firebaseConfig = {
   apiKey: "AIzaSyDWU0llU8irjBkXlTitdGmko1JemAWbyc4",
@@ -23,9 +24,8 @@ firebase.initializeApp(firebaseConfig);
 
 
 const AppStack = createStackNavigator({
-  Home: Pokedex,
-  Pokemons : Pokemon
-
+  Pokedex : Pokedex,
+  Pokemons : Pokemon,
 });
 
 const AuthStack = createStackNavigator({

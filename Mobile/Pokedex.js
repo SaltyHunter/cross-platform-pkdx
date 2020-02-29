@@ -31,25 +31,23 @@ function addIndex(pokedex){
     pokedex = pokedex.map(function(element) {
         element.detail = getDetailPokemon(element.url)
         element.index = i
-        element.image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png`
+        element.image = `https://pokeres.bastionbot.org/images/pokemon/${i}.png`
         i = i+1
         return element
     })
     
 }
   return (
+      
         <ScrollView>
         {addIndex(pokedex)}
         <Logout/>
-        <Text style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>Pokedex</Text>
         {pokedex.map(pokemon =>(
-            <View>
-                
-                <Text>{pokemon.index}:{pokemon.name}</Text>
+            <View style={{textAlign:"vertical"}}>
                 <Avatar
                     size="large"
                     source={{ uri: pokemon.image }} 
-                    activeOpacity={0.7}
+                    activeOpacity={1.0}
                     onPress={() => navigation.navigate('Pokemons', {
                         pokemonId:pokemon.index,
                         pokemonName: pokemon.name,
@@ -57,6 +55,7 @@ function addIndex(pokedex){
                         pokemonWeight: pokemon.results
                     })}
                 />
+                <Text style={{ textTransform:"uppercase"}}>{pokemon.name}</Text>
             </View>
         ))} 
         </ScrollView>

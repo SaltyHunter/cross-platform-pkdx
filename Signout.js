@@ -1,6 +1,8 @@
 import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity} from "react-native";
 import * as firebase from "firebase";
+import logo from './assets/logout.png'
+import { Avatar } from 'react-native-elements';
 
 export default class Logout extends React.Component {
     state = {
@@ -21,8 +23,10 @@ export default class Logout extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <TouchableOpacity style={{marginTop: 32}} onPress={this.signOutUser}>
-                    <Text style={{color: "black", fontWeight:"500"}}>Deconnexion</Text>              
+                <TouchableOpacity style={{marginTop: 1, marginLeft:"90%"}} onPress={this.signOutUser}>
+                    <Avatar
+                    source={{ uri: `${logo}` }}
+                    />                
                 </TouchableOpacity>
             </View>
         );
