@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollViewComponent } from 'react-native';
-import { Avatar } from 'react-native-elements';
+import { View, Text, Image, ImageBackground, ScrollViewComponent } from 'react-native';
 import Logout from '../Signout'
-import { ScrollView } from 'react-native-gesture-handler';
 
 export default function Pokemon ( route ) {
 
@@ -12,14 +10,11 @@ export default function Pokemon ( route ) {
     const type2 = JSON.stringify(pokemonDetails.detail['_55'].types[1]) !== undefined ? JSON.stringify(pokemonDetails.detail['_55'].types[1].type.name) : 'nothing';
 
 
-    return (      
-      <View style={{ flex:1, alignItems: 'center', justifyContent: 'center', backgroundColor:"#bdbcbc"}}>
+    return (   
+    <ImageBackground source={require('../assets/background.jpg')} style={{width: '100%', height: '100%'}}>
+      <View style={{ flex:1, alignItems: 'center', justifyContent: 'center'}}>
         <Logout/>
-        <Avatar
-            size="xlarge"
-            iconColor="black"
-            source={{ uri: `https://pokeres.bastionbot.org/images/pokemon/${pokemonId}.png` }}>
-            </Avatar>
+        <Image source={{ uri: `https://pokeres.bastionbot.org/images/pokemon/${pokemonId}.png` }} style={{ width: 180, height: 180 }}/>
             <View style={{ flex:2, alignItems: 'center', justifyContent: 'center'}}>
                 <Text>ID: {JSON.stringify(pokemonId)}</Text>
                 <Text>Name: {JSON.stringify(pokemonName)}</Text>
@@ -37,5 +32,6 @@ export default function Pokemon ( route ) {
                 <Text>{JSON.stringify(pokemonDetails.detail['_55'].stats[5].stat.name)} : {JSON.stringify(pokemonDetails.detail['_55'].stats[5]['base_stat'])} (EP:{JSON.stringify(pokemonDetails.detail['_55'].stats[5]['effort'])})</Text>
                 </View>
         </View>
+    </ImageBackground>   
     )
 }

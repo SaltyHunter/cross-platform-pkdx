@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Text, View, ScrollView } from 'react-native';
-import { Avatar, colors } from 'react-native-elements';
+import { Text, View, ScrollView, Image, TouchableOpacity, ImageBackground } from 'react-native';
 import Logout from '../Signout'
 
 export default function Pokedex({ navigation }) {
@@ -37,27 +36,24 @@ function addIndex(pokedex){
     
 }
   return (
-      
-        <ScrollView style={{backgroundColor:"#bdbcbc"}}>
+    <ImageBackground source={require('../assets/bg.jpg')} style={{width: '100%', height: '100%'}}>
+        <ScrollView >
         {addIndex(pokedex)}
         <Logout/>
         {pokedex.map(pokemon =>(
-            <View style={{ flex:1, alignItems: 'center', justifyContent: 'center'}}>
-                <Avatar
-                    size="large"
-                    source={{ uri: pokemon.image }} 
-                    activeOpacity={1.0}
-                    onPress={() => navigation.navigate('Pokemons', {
+            <View style={{ flex:1, flexDirection:'row', flexWrap: 'wrap', alignSelf:"center" }}>
+                <TouchableOpacity onPress={() => navigation.navigate('Pokemons', {
                         pokemonId:pokemon.index,
                         pokemonName: pokemon.name,
                         pokemonDetails: pokemon,
-                    })}
-                />
-                <Text style={{ textTransform:"uppercase"}}>{pokemon.name}</Text>
+                    })}>
+                    <Image source={{ uri: pokemon.image }} style={{ width: 180, height: 180 }}/>
+                </TouchableOpacity>                
             </View>
         ))} 
         </ScrollView>
+        </ImageBackground>
+
   );
 }
-
-// style={{ flex:1, alignItems: 'center', justifyContent: 'center', backgroundColor:"#bdbcbc"}}
+//                    <Text style={{ textTransform:"uppercase", alignSelf:'center'}}>{pokemon.name}</Text>
