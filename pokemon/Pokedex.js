@@ -36,8 +36,8 @@ function addIndex(pokedex){
     
 }
   return (
-    <ImageBackground source={require('../assets/bg.jpg')} style={{width: '100%', height: '100%'}}>
-        <ScrollView >
+    <ImageBackground source={require('../assets/bg.jpg')} style={{width: '100%', height: '100%',flex:1, flexDirection:'row'}}>
+        <ScrollView>
         {addIndex(pokedex)}
         <Logout/>
         {pokedex.map(pokemon =>(

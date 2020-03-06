@@ -31,7 +31,7 @@ export default class RegisterScreen extends React.Component {
                 <Image source = {require("../assets/pokeball.png")} style={{ marginLeft:100, marginTop:10}}></Image>
 
                 <View style={styles.errorMessage}>
-        {this.state.errorMessage && <Text style={styles.error}>{this.state.errorMessage}</Text>}
+                    {this.state.errorMessage && <Text style={styles.error}>{this.state.errorMessage}</Text>}
                 </View>
 
                 <View style={styles.form}>

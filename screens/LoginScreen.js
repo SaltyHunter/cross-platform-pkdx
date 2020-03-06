@@ -26,9 +26,8 @@ export default class LoginScreen extends React.Component {
             <View style={styles.container}>
                 <StatusBar barStyle="light-content"></StatusBar>
                 <Image source = {require("../assets/pokeball.png")} style={{ marginLeft:100, marginTop:100}}></Image>
-
                 <View style={styles.errorMessage}>
-        {this.state.errorMessage && <Text style={styles.error}>{this.state.errorMessage}</Text>}
+        {           this.state.errorMessage && <Text style={styles.error}>{this.state.errorMessage}</Text>}
                 </View>
 
                 <View style={styles.form}>

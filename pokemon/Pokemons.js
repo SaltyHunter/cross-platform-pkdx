@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { View, Text, Image, ImageBackground, ScrollViewComponent } from 'react-native';
+import React from 'react'
+import { View, Text, Image, ImageBackground } from 'react-native';
 import Logout from '../Signout'
 
 export default function Pokemon ( route ) {
@@ -16,14 +16,13 @@ export default function Pokemon ( route ) {
         <Logout/>
         <Image source={{ uri: `https://pokeres.bastionbot.org/images/pokemon/${pokemonId}.png` }} style={{ width: 180, height: 180 }}/>
             <View style={{ flex:2, alignItems: 'center', justifyContent: 'center'}}>
-                <Text>ID: {JSON.stringify(pokemonId)}</Text>
-                <Text>Name: {JSON.stringify(pokemonName)}</Text>
-                <Text>Height: {JSON.stringify(pokemonDetails.detail['_55'].height)}</Text>
-                <Text>Weight: {JSON.stringify(pokemonDetails.detail['_55'].weight)}</Text>       
-                <Text>Base Experience: {JSON.stringify(pokemonDetails.detail['_55']['base_experience'])}</Text>
-                <Text>Type 1: {JSON.stringify(pokemonDetails.detail['_55'].types[0].type.name)}</Text>       
-                <Text>Type 2: {type2}</Text>
-                <Text > STATS:</Text>
+                <Text style={{ fontWeight: 'bold', fontSize:30, textTransform:"uppercase"}}>N° {JSON.stringify(pokemonId)} {JSON.stringify(pokemonName)}</Text>
+                <Text>Taille : {JSON.stringify(pokemonDetails.detail['_55'].height)}</Text>
+                <Text>Poids : {JSON.stringify(pokemonDetails.detail['_55'].weight)}</Text>       
+                <Text>Expérience de base : {JSON.stringify(pokemonDetails.detail['_55']['base_experience'])}</Text>
+                <Text>Type 1 : {JSON.stringify(pokemonDetails.detail['_55'].types[0].type.name)}</Text>       
+                <Text>Type 2 : {type2}</Text>
+                <Text style={{ fontWeight: 'bold', textTransform:"uppercase"}}>STATS</Text>
                 <Text>{JSON.stringify(pokemonDetails.detail['_55'].stats[0].stat.name)} : {JSON.stringify(pokemonDetails.detail['_55'].stats[0]['base_stat'])} (EP:{JSON.stringify(pokemonDetails.detail['_55'].stats[0]['effort'])})</Text>
                 <Text>{JSON.stringify(pokemonDetails.detail['_55'].stats[1].stat.name)} : {JSON.stringify(pokemonDetails.detail['_55'].stats[1]['base_stat'])} (EP:{JSON.stringify(pokemonDetails.detail['_55'].stats[1]['effort'])})</Text>
                 <Text>{JSON.stringify(pokemonDetails.detail['_55'].stats[2].stat.name)} : {JSON.stringify(pokemonDetails.detail['_55'].stats[2]['base_stat'])} (EP:{JSON.stringify(pokemonDetails.detail['_55'].stats[2]['effort'])})</Text>
