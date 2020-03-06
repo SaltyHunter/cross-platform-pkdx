@@ -16,7 +16,7 @@ export default function Pokemon ( route ) {
         <Logout/>
         <Image source={{ uri: `https://pokeres.bastionbot.org/images/pokemon/${pokemonId}.png` }} style={{ width: 180, height: 180 }}/>
             <View style={{ flex:2, alignItems: 'center', justifyContent: 'center'}}>
-                <Text style={{ fontWeight: 'bold', fontSize:30, textTransform:"uppercase"}}>N° {JSON.stringify(pokemonId)} {JSON.stringify(pokemonName)}</Text>
+                <Text style={{ fontWeight: 'bold', fontSize:30, textTransform:"uppercase"}}>N°{JSON.stringify(pokemonId)} {JSON.stringify(pokemonName)}</Text>
                 <Text>Taille : {JSON.stringify(pokemonDetails.detail['_55'].height)}</Text>
                 <Text>Poids : {JSON.stringify(pokemonDetails.detail['_55'].weight)}</Text>       
                 <Text>Expérience de base : {JSON.stringify(pokemonDetails.detail['_55']['base_experience'])}</Text>

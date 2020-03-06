@@ -9,7 +9,7 @@ export default function Pokedex({ navigation }) {
     const [pokedex,setPokedex]=useState([]);
     const fetchPokedex = async () => {
         const data = await fetch(
-            'https://pokeapi.co/api/v2/pokemon?limit=100'
+            'https://pokeapi.co/api/v2/pokemon?limit=101'
         );
         const pokedex = await data.json();
         setPokedex(pokedex.results);

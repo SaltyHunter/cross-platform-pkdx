@@ -13,7 +13,7 @@
     "orientation": "portrait",
     "icon": "./assets/iconPokeball.png",
     "splash": {
-      "image": "./assets/loader.png",
+      "image": "./assets/loadpikachu.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
