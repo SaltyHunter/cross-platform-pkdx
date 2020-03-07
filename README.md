@@ -16,4 +16,6 @@ Ecran des informations du pokémon sélectionné (ALPHA V0.1)
 
 <img src ="https://media.discordapp.net/attachments/499862865956831234/685847046280052780/Screenshot_20200307-145100.jpg?width=312&height=676">
 
-BONUS : Ecran de Loading : <img src ="https://media.discordapp.net/attachments/499862865956831234/685847976454914079/Screenshot_20200307-145445.jpg?width=312&height=676">
+BONUS : Ecran de Loading : 
+
+<img src ="https://media.discordapp.net/attachments/499862865956831234/685847976454914079/Screenshot_20200307-145445.jpg?width=312&height=676">
